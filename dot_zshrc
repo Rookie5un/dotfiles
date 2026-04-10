@@ -1,0 +1,29 @@
+export ZSH="$HOME/.oh-my-zsh"
+ZSH_THEME=""
+plugins=(git)
+
+source $ZSH/oh-my-zsh.sh
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"
+[ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"
+
+export CONDA_CHANGEPS1=false
+
+# >>> conda initialize >>>
+__conda_setup="$('/Users/rookie/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/Users/rookie/miniconda3/etc/profile.d/conda.sh" ]; then
+        . "/Users/rookie/miniconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/Users/rookie/miniconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+export JAVA_HOME=/opt/homebrew/opt/openjdk@17
+export PATH="$JAVA_HOME/bin:$PATH"
+
+[[ ! -f ~/.zsh-prompt-screenshot.zsh ]] || source ~/.zsh-prompt-screenshot.zsh
