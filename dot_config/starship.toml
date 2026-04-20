@@ -2,6 +2,9 @@
 
 add_newline = false
 
+right_format = """
+$nodejs$python$java"""
+
 format = """
 [](#f38ba8)\
 $os\
@@ -67,7 +70,17 @@ disabled = true
 disabled = true
 
 [nodejs]
-disabled = true
+disabled = false
+format = "[](#a6e3a1)[ ⬢ $version ](bg:#a6e3a1 fg:#1e1e2e bold)[](fg:#a6e3a1) "
+detect_extensions = []
 
 [java]
-disabled = true
+disabled = false
+format = "[](#74c7ec)[ ☕ $version ](bg:#74c7ec fg:#1e1e2e bold)[](fg:#74c7ec) "
+detect_extensions = []
+
+[python]
+disabled = false
+format = "[](#89dceb)[  $version ](bg:#89dceb fg:#1e1e2e bold)[](fg:#89dceb) "
+detect_folders = []
+pyenv_version_name = false
