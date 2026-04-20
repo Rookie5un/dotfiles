@@ -1,0 +1,73 @@
+# Starship prompt styled to match the reference screenshot.
+
+add_newline = false
+
+format = """
+[](#f38ba8)\
+$os\
+$username\
+[](bg:#fab387 fg:#f38ba8)\
+$directory\
+[](bg:#f9e2af fg:#fab387)\
+$git_branch\
+$git_status\
+[](fg:#f9e2af)\
+$character"""
+
+[os]
+disabled = false
+style = "bg:#f38ba8 fg:#1e1e2e"
+format = "[$symbol ]($style)"
+
+[os.symbols]
+Macos = ""
+
+[username]
+show_always = true
+style_user = "bg:#f38ba8 fg:#1e1e2e bold"
+style_root = "bg:#f38ba8 fg:#1e1e2e bold"
+format = "[$user ]($style)"
+
+[directory]
+style = "bg:#fab387 fg:#1e1e2e bold"
+format = "[ $path ]($style)"
+home_symbol = "~"
+truncation_length = 3
+truncation_symbol = "…/"
+
+[git_branch]
+symbol = ""
+style = "bg:#f9e2af fg:#1e1e2e bold"
+format = "[ $symbol $branch ]($style)"
+
+[git_status]
+style = "bg:#f9e2af fg:#1e1e2e bold"
+format = "[$all_status$ahead_behind ]($style)"
+conflicted = "="
+ahead = "⇡${count}"
+behind = "⇣${count}"
+diverged = "⇕⇡${ahead_count}⇣${behind_count}"
+up_to_date = ""
+untracked = "?"
+stashed = "*"
+modified = "!"
+staged = "+"
+renamed = "»"
+deleted = "✘"
+
+[character]
+success_symbol = "[ ❯](bold fg:#f9e2af)"
+error_symbol = "[ ❯](bold fg:#f38ba8)"
+vimcmd_symbol = "[ ❮](bold fg:#f9e2af)"
+
+[package]
+disabled = true
+
+[conda]
+disabled = true
+
+[nodejs]
+disabled = true
+
+[java]
+disabled = true
